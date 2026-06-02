@@ -17,7 +17,7 @@ function App() {
       <br />
       <Card cardName = "Hritik" btnText="SDE @ India" />
       <br />
-      <Card cardName = "Hari" btnText="Arch. @ Nepal"/>
+      <Card cardName = "Hari" btnText="Architect @ Nepal"/>
      
     </>
   )
