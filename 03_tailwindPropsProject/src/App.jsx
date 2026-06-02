@@ -13,11 +13,11 @@ function App() {
     <>
       <h1 className='bg-green-400 text-black p-4 rounded-xl'>Tailwind Test</h1>
       
-      <Card cardName = "Pratik" btnText="SDE @ Germany" />    
+      <Card cardName = "Pratik" about = "Architect @ Nepal" btnText="About Me" />    
       <br />
-      <Card cardName = "Hritik" btnText="SDE @ India" />
+      <Card cardName = "Hritik" about = "Architect @ Nepal" btnText="Read More" />
       <br />
-      <Card cardName = "Hari" btnText="Architect @ Nepal"/>
+      <Card cardName = "Hari" about = "Architect @ Nepal" btnText="Get to know me"/>
      
     </>
   )
