@@ -13,9 +13,9 @@ function App() {
     <>
       <h1 className='bg-green-400 text-black p-4 rounded-xl'>Tailwind Test</h1>
       
-      <Card cardName = "Pratik" about = "Architect @ Nepal" btnText="About Me" />    
+      <Card cardName = "Pratik" about = "SDE @ Germany" btnText="About Me" />    
       <br />
-      <Card cardName = "Hritik" about = "Architect @ Nepal" btnText="Read More" />
+      <Card cardName = "Hritik" about = "SDE @ India" btnText="Read More" />
       <br />
       <Card cardName = "Hari" about = "Architect @ Nepal" btnText="Get to know me"/>
      
