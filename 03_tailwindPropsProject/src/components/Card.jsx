@@ -1,9 +1,10 @@
 import React from "react";
 //here the code for the card component is written then it is exported and rendered in the "app.jsx" using <Card />
 
-function Card({cardName, about, btnText }) {    
-//cardName parameter is passed,so that all the card have different parameters as required
 
+function Card({cardName, about, btnText="More info" }) {    
+//cardName, about, btnText parameters are passed,so that all the card have different parameters as required
+// default value of btnText="More info", so that when this para is not passed then default value kicks in (eg in: cardName = "Pratik")
   return (
     <div>
       <div className="max-w-xs rounded-md shadow-md bg-black text-gray-100">
