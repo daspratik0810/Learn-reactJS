@@ -1,6 +1,12 @@
+import Chai from "./Chai.jsx"
+
 function App() {
   return (
-    <h1>Chai aur react with Vite </h1>
+    <>
+      <Chai />
+      <h1>Chai aur react with Vite </h1>
+      <p>test</p>
+    </>
   )
 }
 

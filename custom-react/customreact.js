@@ -1,4 +1,4 @@
-//classic fucntion to render 
+//classic funcion to render 
 /*function customRender(reactElement, container){
     const domElement = document.createElement(reactElement.type)  //DOM element is created
     domElement.innerHTML = reactElement.children    //in the innerHTMl it is changed to "Click me to visit google"
