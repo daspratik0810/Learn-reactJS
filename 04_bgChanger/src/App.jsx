@@ -14,6 +14,7 @@ function App() {
 
       <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
         <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
+          
           <button className="relative block group" onClick={() => setColor("Red")}>
             <span className="absolute inset-0  bg-indigo-500  rounded-lg"></span>
             <div className="transition bg-red-600 relative border-2 rounded-lg group-hover:-translate-x-2 group-hover:-translate-y-2">
@@ -112,6 +113,7 @@ function App() {
               </div>
             </div>
           </button>
+          
         </div>
       </div>
     </div>
