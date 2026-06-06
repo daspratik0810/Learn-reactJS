@@ -13,7 +13,7 @@ function App() {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     if (numberAllowed) str += Math.random()
-    if (charAllowed) str += "!@#$%^&*-_+=[]{}~`€ "
+    if (charAllowed) str += "!@#$%^&*-_+=[]{}~`€"
 
     for (let i = 1; i <= length; i++) {
       let index = Math.floor(Math.random() * str.length + 1)
