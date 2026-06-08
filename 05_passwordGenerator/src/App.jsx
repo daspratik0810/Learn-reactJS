@@ -25,9 +25,10 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
+
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 101);
+    passwordRef.current.focus()
+    passwordRef.current.setSelectionRange(0, 101);
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
@@ -51,6 +52,13 @@ function App() {
         />
         <button
           onClick={copyPasswordToClipboard}
+          style={{ backgroundColor: "blue" }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = "darkblue";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "blue";
+          }}
           className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
         >
         COPY
