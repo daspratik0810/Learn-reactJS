@@ -31,8 +31,8 @@ function App() {
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
-  //useEffect() hook lets us synchronize a component or function with an external system
-  useEffect(() => {
+  //useEffect() hook lets us synchronize a component or function with an external system, here it runs the passwordGenerator() function whenever its dependencies are changed
+  useEffect(() => { 
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
 
