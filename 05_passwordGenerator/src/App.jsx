@@ -6,7 +6,7 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-  //useRef hook - it is used to take the reference of anything
+  //useRef hook - it is used to take the reference of anything and then manupulate later on, here we are taking the reference of the input field where the generated password is shown and then we will use that reference to copy the password to clipboard when the user clicks on the copy button
   const passwordRef = useRef(null);
 
   //UseCallback() is used to keep a function in the cashe/memory for every re-render
@@ -32,7 +32,7 @@ function App() {
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
-  //useEffect() hook lets us synchronize a component or function with an external system, here it runs the passwordGenerator() function whenever its dependencies are changed
+  //useEffect() hook lets us synchronize a component or function with an external system, here it runs the passwordGenerator() function firsttime as the page loads and then again whenever its dependencies are changed
   useEffect(() => { 
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
