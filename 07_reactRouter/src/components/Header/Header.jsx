@@ -7,6 +7,7 @@ export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+                {/* this is the logo section of nav bar*/}
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
@@ -15,6 +16,7 @@ export default function Header() {
                             alt="Logo"
                         />
                     </Link>
+                    {/* this is the login/getstarted section of nav bar*/}
                     <div className="flex items-center lg:order-2">
                         <Link
                             to="#"
@@ -35,6 +37,7 @@ export default function Header() {
                     >
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
+                                {/* this is the home section of nav bar*/}
                                 <NavLink
                                 to="/"
                                     className={({isActive}) =>
