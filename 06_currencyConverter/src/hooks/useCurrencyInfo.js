@@ -3,7 +3,6 @@ function useCurrencyInfo() {
   const [data, setData] = useState({});
   
   useEffect(() => {
-    const play = "football"
     fetch(
       "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_7HThMinm3Ffa4Zb3CU8fmV1XnAsKyn5PnEU4y6CY"
     )
