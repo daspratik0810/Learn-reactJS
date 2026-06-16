@@ -1,14 +1,41 @@
-import { useState } from "react";
-import { createContext, useContext, ToDoProvider } from "./contexts/ToDoContext";
+import { useEffect, useState } from "react";
+import {ToDoProvider } from "./contexts/ToDoContext";
 import "./App.css";
 
 function App() {
   //state to hold the list of toDos, it is initialized as an empty array
-  const [toDos, settoDos] = useState([]);
+  const [toDos, setToDos] = useState([]);
 
-//
+const addToDo = (toDo) =>{
+  setToDos((prev) => [{id:Date.now(), ...toDo}, ...prev])
+}
+
+const updateToDo = (id, toDo) =>{
+  setToDos((prev) => prev.map( (prevToDo) => (prevToDo.id === id ? toDo : prevToDo) ))
+}
+
+const deleteToDo = (id) =>{
+  setToDos( (prev) => prev.filter( (AllToDos) => AllToDos.id !== id )  )
+}
+
+const toggleComplete = (id) =>{
+    setToDos( (prev) => prev.map( (prevToDo) => (prevToDo.id === id ? prevToDo.completed = true : prevToDo)) )
+}
+
+useEffect( () => {
+  const toDos = JSON.parse( localStorage.getItem("toDos") )
+  if(toDos){
+   setToDos(toDos)
+  }
+},[])
+
+useEffect( () => {
+  localStorage.setItem("toDos", JSON.stringify(toDos)) 
+}, [toDos])
+
+
   return (
-    <ToDoProvider value = {}>
+    <ToDoProvider value = {{toDos, addToDo, updateToDo, deleteToDo, toggleComplete}}>
       <div className="bg-[#172842] min-h-screen py-8">
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">
