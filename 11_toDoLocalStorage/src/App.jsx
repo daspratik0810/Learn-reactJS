@@ -5,8 +5,10 @@ import ToDoItem from "./components/ToDoItem";
 import "./App.css";
 
 function App() {
-  //state to hold the list of toDos, it is initialized as an empty array
-  const [toDos, setToDos] = useState([]);
+  //state to hold the list of toDos, initialized from localStorage if present
+  const [toDos, setToDos] = useState(() => {
+    return JSON.parse(localStorage.getItem("toDos")) ?? []
+  })
 
 const addToDo = (toDo) =>{
   setToDos((prev) => [{id:Date.now(), ...toDo}, ...prev])
@@ -25,15 +27,8 @@ const toggleComplete = (id) =>{
 
 }
 
-useEffect( () => {
-  const toDos = JSON.parse( localStorage.getItem("toDos") )
-  if(toDos){
-   setToDos(toDos)
-  }
-},[])
-
-useEffect( () => {
-  localStorage.setItem("toDos", JSON.stringify(toDos)) 
+useEffect(() => {
+  localStorage.setItem("toDos", JSON.stringify(toDos))
 }, [toDos])
 
 
