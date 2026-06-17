@@ -22,7 +22,18 @@ function numInp(inp) {
     if(Oper === "+"){
       const finalResult = Number(firstNum) + Number(inp)
       console.log(`${finalResult}  is the final result`);
-      
+    }
+    if(Oper === "-"){
+      const finalResult = Number(firstNum) - Number(inp)
+      console.log(`${finalResult}  is the final result`);
+    }
+    if(Oper === "/"){
+      const finalResult = Number(firstNum) / Number(inp)
+      console.log(`${finalResult}  is the final result`);
+    }
+    if(Oper === "%"){
+      const finalResult = Number(firstNum) % Number(inp)
+      console.log(`${finalResult}  is the final result`);
     }
     
   }
@@ -41,33 +52,33 @@ function numInp(inp) {
       <div className=' m-8 border-2 border-purple-500'>
         <div className=' space-x-4 m-8 border-2 border-green-500'>
           
-          <button onClick={() => consoleMsg("(")}  className='m-2 p-5 border-2 border-purple-500'>
+          <button onClick={() => consoleMsg("(")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'>
           (
           </button>
           
-          <button onClick={() => signInp(")")} className='m-2 p-5 border-2 border-purple-500'>)</button>
-          <button onClick={() => signInp("%")}  className=' m-2 p-5 border-2 border-purple-500'> %</button>
-          <button onClick={() => consoleMsg("AC")}  className=' ml-8  p-5 border-2 border-purple-500'> AC </button>
+          <button onClick={() => signInp(")")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'>)</button>
+          <button onClick={() => signInp("%")}  className=' m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> %</button>
+          <button onClick={() => consoleMsg("AC")}  className=' ml-8  p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> AC </button>
           <br />
-          <button onClick={() => numInp("7")} className='m-2 p-5 border-2 border-purple-500'> 7</button>
-          <button onClick={() => numInp("8")} className='m-2 p-5 border-2 border-purple-500'> 8</button>
-          <button onClick={() => numInp("9")} className='m-2 p-5 border-2 border-purple-500'> 9</button>
-           <button onClick={() => signInp("/")} className='ml-8 p-5 border-2 border-purple-500'> / </button>
+          <button onClick={() => numInp("7")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 7</button>
+          <button onClick={() => numInp("8")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 8</button>
+          <button onClick={() => numInp("9")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 9</button>
+           <button onClick={() => signInp("/")} className='ml-8 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> / </button>
           <br />
-          <button onClick={() => numInp("4")} className='m-2 p-5 border-2 border-purple-500'> 4</button>
-          <button onClick={() => numInp("5")} className='m-2 p-5 border-2 border-purple-500'> 5</button>
-          <button onClick={() => numInp("6")} className='m-2 p-5 border-2 border-purple-500'> 6</button>
-           <button onClick={() => signInp("*")} className='ml-8 p-5 border-2 border-purple-500'> * </button>
+          <button onClick={() => numInp("4")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 4</button>
+          <button onClick={() => numInp("5")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 5</button>
+          <button onClick={() => numInp("6")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 6</button>
+           <button onClick={() => signInp("*")} className='ml-8 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> * </button>
           <br />
-          <button onClick={() => numInp("1")} className='m-2 p-5 border-2 border-purple-500'> 1</button>
-          <button onClick={() => numInp("2")} className='m-2 p-5 border-2 border-purple-500'> 2</button>
-          <button onClick={() => numInp("3")} className='m-2 p-5 border-2 border-purple-500'> 3</button>
-          <button onClick={() => signInp("-")} className='ml-8 p-5 border-2 border-purple-500'> - </button>
+          <button onClick={() => numInp("1")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 1</button>
+          <button onClick={() => numInp("2")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 2</button>
+          <button onClick={() => numInp("3")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 3</button>
+          <button onClick={() => signInp("-")} className='ml-8 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> - </button>
           <br />
-          <button onClick={() => numInp("0")} className='m-2 p-5 border-2 border-purple-500'> 0</button>
-          <button onClick={() => numInp(".")} className='m-2 p-5 border-2 border-purple-500'>.</button>
-          <button onClick={() => consoleMsg("=")} className='m-2 p-5 border-2 border-purple-500'> =</button>
-          <button onClick={() => signInp("+")} className='ml-8 p-5 border-2 border-purple-500'> + </button>
+          <button onClick={() => numInp("0")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> 0</button>
+          <button onClick={() => numInp(".")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'>.</button>
+          <button onClick={() => consoleMsg("=")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> =</button>
+          <button onClick={() => signInp("+")} className='ml-8 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'> + </button>
         </div>
        
       </div>
