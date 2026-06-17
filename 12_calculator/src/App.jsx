@@ -1,58 +1,72 @@
 import { useState } from 'react'
-
 import './App.css'
 
+//Final result to display on the displayBox
+function DisplayResult({ value }) {
+  return (
+    <div className="text-right text-3xl font-semibold">
+      {value}
+    </div>
+  )
+}
+
 function App() {
-var firstNum = ""
-var Oper = ""
+  const [formula, setFormula] = useState('')
+  const [displayValue, setDisplayValue] = useState('0')
 
-function numInp(inp) {
-  if(Oper.length == 0){
-   firstNum += inp
-   console.log(firstNum);
-  } 
-  else result(firstNum, Oper, inp)
+  //all the values comes together into one and gets into formula and display box
+  const updateFormula = (next) => {
+    setFormula(next)
+    setDisplayValue(next)
   }
-  
-  function signInp (sign){
-    Oper = sign
+
+  //when we press a number, it adds to the default formula and keeps on adding to it
+  const numInp = (inp) => {
+    updateFormula(formula + inp)
   }
-  
-  function result (firstNum, Oper, inp){
-    if(Oper === "+"){
-      const finalResult = Number(firstNum) + Number(inp)
-      console.log(`${finalResult}  is the final result`);
-    }
-    if(Oper === "-"){
-      const finalResult = Number(firstNum) - Number(inp)
-      console.log(`${finalResult}  is the final result`);
-    }
-    if(Oper === "/"){
-      const finalResult = Number(firstNum) / Number(inp)
-      console.log(`${finalResult}  is the final result`);
-    }
-    if(Oper === "%"){
-      const finalResult = Number(firstNum) % Number(inp)
-      console.log(`${finalResult}  is the final result`);
-    }
+    //when we press a SIGN/OPERATOR, it handles it
+  const signInp = (sign) => {
+    if (!formula && sign !== '(') return  // this line avoids +-/* and allows only "(" to be applied in the start
     
+    const lastChar = formula.slice(-1)  //this takes the last character of the formula
+    const operators = '+-*/%'     
+    if (operators.includes(lastChar) && operators.includes(sign)) {   //the first half  avoids last character not to be a sign  and second half avoids the new button(again sign)to be pressed, so if the last character in formula is already an operator and the new button pressed is also an operator. If both are true, then you replace the old operator with the new one instead of adding a second operator.
+      updateFormula(formula.slice(0, -1) + sign)  //this replaces the previous operator with new one
+      return
+    }
+    updateFormula(formula + sign)
   }
-  
-  
 
+  //it will reset the formula if AC is pressed
+  const consoleMsg = (cmd) => {
+    if (cmd === 'AC') {
+      updateFormula('')
+      return
+    }
 
-  
+    //it will evaluate the formula and give error message if it has error
+    if (cmd === '=') {
+      try {
+        const result = eval(formula || '0') 
+        const text = String(result)   //this will showcase the final result on the displayBox
+        updateFormula(text)
+      } catch (error) {
+        setDisplayValue('Error')  //this will showcase error message if anything goes wrong
+      }
+    }
+  }
+
   return (
   <>
     <div className="m-9 p-8 border-4 border-indigo-500">
-      <div className='p-8 border-2 border-purple-500 '>
-    OUTPUT
+      <div className='p-8 border-2 border-purple-500'>
+        <DisplayResult value={displayValue} />
       </div>
-      {/* LEFT INPUT */}
+      {/* INPUT */}
       <div className=' m-8 border-2 border-purple-500'>
         <div className=' space-x-4 m-8 border-2 border-green-500'>
           
-          <button onClick={() => consoleMsg("(")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'>
+          <button onClick={() => signInp("(")} className='m-2 p-5 border-2 border-purple-500 hover:bg-purple-200 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700'>
           (
           </button>
           
